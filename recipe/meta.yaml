@@ -1,5 +1,5 @@
 {% set name = "exhale" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exhale-{{ version }}.tar.gz
-  sha256: a0fe5d7b2d8990c8f942f6645f271365188de017d655b365be319bfa311c1113
+  sha256: b835845c5e6015f00be99b52a99d4c67a2cecd20368b8ea663d5d3ce7d990a3f
 
 build:
   noarch: python
