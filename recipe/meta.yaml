@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exhale-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/exhale-{{ version }}.tar.gz
   sha256: 752a96d0a59456511d933311d4a81f642cd668296eacd2561905727d5ed6b0d8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - beautifulsoup4
     - breathe >=4.32.0
     - docutils >=0.12
     - lxml
-    - python >=3.6
+    - python >={{ python_min }}
     - six
     - sphinx >=3.0,<5
 
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/svenevs/exhale
